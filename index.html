@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>reflexión · silueta</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+  <div id="ui">
+    <div style="display:flex;align-items:center;gap:6px;">
+      <label>texto</label>
+      <textarea id="txt">el servicio siempre estuvo ahí, pero yo no sabía que existía hasta que aprendí a mirarlo. antes veía objetos. ahora veo relaciones.</textarea>
+    </div>
+    <div style="display:flex;align-items:center;gap:6px;">
+      <label>tamaño</label>
+      <input type="range" id="fsize" min="8" max="22" value="13" />
+    </div>
+    <div style="display:flex;align-items:center;gap:6px;">
+      <label>umbral</label>
+      <input type="range" id="thresh" min="60" max="200" value="120" />
+    </div>
+    <div style="display:flex;align-items:center;gap:6px;">
+      <label>modo</label>
+      <select id="mode">
+        <option value="dark">silueta oscura</option>
+        <option value="light">silueta clara</option>
+      </select>
+    </div>
+    <div style="display:flex;align-items:center;gap:6px;">
+      <label>espejo</label>
+      <select id="mirror">
+        <option value="1">sí</option>
+        <option value="0">no</option>
+      </select>
+    </div>
+    <button class="capture" onclick="capturar()">📷 capturar</button>
+    <button onclick="exportar()">↓ exportar PNG</button>
+  </div>
+
+  <div id="canvas-container">
+    <canvas id="c"></canvas>
+  </div>
+
+  <div id="overlay-msg">
+    iniciando cámara...<br>
+    <span style="color:#222;font-size:10px">puede pedir permiso de acceso</span>
+  </div>
+
+  <div id="hint">espacio para capturar · E para exportar</div>
+
+  <script src="sketch.js"></script>
+</body>
+</html>
